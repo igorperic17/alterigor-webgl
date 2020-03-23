@@ -48,12 +48,12 @@ function getBase64FromImageUrl(url) {
 var Nodes = {
 
 // Settings
-density: 16,
+density: 7,
 
-drawDistance: 24,
-baseRadius: 4,
+drawDistance: 1,
+baseRadius: 2,
 maxLineThickness: 4,
-reactionSensitivity: 5,
+reactionSensitivity: 4,
 lineThickness: 1,
 
 points: [],
@@ -98,8 +98,8 @@ init: function() {
   }
 
   // Load initial input image (the chrome logo!)
-  var imgData = getBase64FromImageUrl("ai.png");
-  // var imgData = getBase64FromImageUrl("igor.jpg");
+  // var imgData = getBase64FromImageUrl("ai.png");
+  var imgData = getBase64FromImageUrl("design-files/logo.png");
   this.loadData( imgData );
 },
 
@@ -119,7 +119,7 @@ preparePoints: function() {
       var pixelPosition = ( j + i * this.bgContextPixelData.width ) * 4;
 
       // Dont use whiteish pixels
-      if ( colors[pixelPosition] > 200 && (colors[pixelPosition + 1]) > 200 && (colors[pixelPosition + 2]) > 200 || colors[pixelPosition + 3] === 0 ) {
+      if ( colors[pixelPosition] < 50 && (colors[pixelPosition + 1]) < 50 && (colors[pixelPosition + 2]) < 50 || colors[pixelPosition + 3] === 0 ) {
         continue;
       }
       

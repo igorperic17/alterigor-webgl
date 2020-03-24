@@ -48,9 +48,9 @@ function getBase64FromImageUrl(url) {
 var Nodes = {
 
 // Settings
-density: 7,
+density: 8,
 
-drawDistance: 1,
+drawDistance: 0,
 baseRadius: 2,
 maxLineThickness: 4,
 reactionSensitivity: 4,

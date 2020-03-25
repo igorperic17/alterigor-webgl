@@ -98,8 +98,8 @@ init: function() {
   }
 
   // Load initial input image (the chrome logo!)
-  // var imgData = getBase64FromImageUrl("ai.png");
-  var imgData = getBase64FromImageUrl("design-files/logo.png");
+  var imgData = getBase64FromImageUrl("ai.png");
+  // var imgData = getBase64FromImageUrl("design-files/logo.png");
   this.loadData( imgData );
 },
 

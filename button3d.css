@@ -5,6 +5,7 @@
     /* margin: -60px 0 0 -150px; */
     perspective: 800px;
 }
+
 .popup {
     position: absolute;
     width:500px;
@@ -25,15 +26,19 @@
     left:5%; top:5%;
     width:90%; height:90%;
     border-radius: inherit;
-    background: rgba(0,0,0,.1);
+    background: rgba(0,0,0,.2);
     box-shadow: 0 0 40px 20px rgba(0,0,0,.1);
     transform: translateZ(-100px);
 }
 .popup-content {
-    background: #444;
+    transition: 0.3s;
+    background: rgba(20,20,20,1);
     padding: 20px;
     box-sizing: border-box;
     border-radius: 10px 0 10px 0;
+}
+.popup-content:hover {
+    background: #222
 }
 .popup-text {
     color: white;

@@ -1,5 +1,5 @@
-var moveForce = 20; // max popup movement in pixels
-var rotateForce = 20; // max popup rotation in deg
+var moveForce = 30; // max popup movement in pixels
+var rotateForce = 40; // max popup rotation in deg
 
 $(document).mousemove(function(e) {
     var docX = $(document).width();
@@ -10,14 +10,17 @@ $(document).mousemove(function(e) {
         
         var button = this.getBoundingClientRect();
 
-        var centerPointX = docX / 2;
-        var centerPointY = docY / 2;
+        var centerPointX = docX ;
+        var centerPointY = docY ;
 
-        var dXC = ( centerPointX - (button.left + button.width / 2) );
-        var dYC =  ( centerPointY - (button.top + button.height / 2) );
+        var buttonCenterX = (button.left + button.width / 2);
+        var buttonCenterY =  (button.top + button.height / 2)
 
-        var dX = (e.pageX - dXC);
-        var dY = (e.pageY - dYC);
+        var dXC = (  - buttonCenterX );
+        var dYC =  (  - buttonCenterY );
+
+        var dX = (e.pageX );
+        var dY = (e.pageY );
 
         var moveX = (e.pageX - docX/2) / (docX/2) * -moveForce;
         var moveY = (e.pageY - docY/2) / (docY/2) * -moveForce;

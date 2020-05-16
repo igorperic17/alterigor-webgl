@@ -1,8 +1,8 @@
 before_script:
-  - apt update -qq
-  - apt install -qq git
+  - apt-get update -qq
+  - apt-get install -qq git
   # Setup SSH deploy keys
-  - 'which ssh-agent || ( apt install -qq openssh-client )'
+  - 'which ssh-agent || ( apt-get install -qq openssh-client )'
   - eval $(ssh-agent -s)
   - ssh-add <(echo "$SSH_PRIVATE_KEY")
   - mkdir -p ~/.ssh
@@ -13,6 +13,7 @@ deploy_production:
   environment:
     name: production
     url: alterigor.ai
+  image: ubuntu:18.04
   script:
     - ssh enzjr8j6ydyn@alterigor.ai "cd public_html/alterigor-webgl && git checkout master && git pull origin master && exit"
   only:

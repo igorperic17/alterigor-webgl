@@ -50,8 +50,8 @@ before_script:
   ## Optionally, if you will be using any Git commands, set the user name and
   ## and email.
   ##
-  - git config --global user.email "admin@alterigor.ai"
-  - git config --global user.name "Igor Peric"
+  ## - git config --global user.email "admin@alterigor.ai"
+  ## - git config --global user.name "Igor Peric"
     
 deploy_production:
   type: deploy

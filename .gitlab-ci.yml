@@ -25,8 +25,10 @@ before_script:
   ## Assuming you created the SSH_KNOWN_HOSTS variable, uncomment the
   ## following two lines.
   ##
-  - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
+  - mkdir -p ~/.ssh
+  - echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config
+  # - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+  # - chmod 644 ~/.ssh/known_hosts
 
   ##
   ## Alternatively, use ssh-keyscan to scan the keys of your private server.
